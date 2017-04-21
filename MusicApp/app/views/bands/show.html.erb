@@ -1,0 +1,13 @@
+<h1>Band Info</h1>
+<p> <%= @band.name %></p>
+
+<form action=' <%= edit_band_url(@band) %>' method='GET'>
+<input type='submit' value='Edit Band'>
+</form>
+
+<form action='<%= band_url(@band) %>' method='post'>
+  <input type='hidden' name='_method' value='DELETE'>
+  <input type='submit' value='Delete Band'>
+</form>
+
+<%= button_to "Add Album", new_band_album_url(@band), method: "get"%>

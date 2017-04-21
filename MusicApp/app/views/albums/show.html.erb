@@ -1,0 +1,9 @@
+<h1>Album Info</h1>
+
+<ul>
+<li> Title: <%= @album.title %> </li>
+<li> Artist: <%= @album.band.name %> </li>
+<li> Type: <%= @album.album_type %> </li>
+</ul>
+
+<%= button_to 'Delete album', album_url(@album.id), method: :delete%>

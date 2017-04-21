@@ -1,0 +1,23 @@
+<h1>Add Album by <%=@band.name %></h1>
+
+<form action="<%= albums_url %>" method="post">
+  <label for="title">Title:</label>
+  <input id="title" type="text" name="album[title]">
+
+  <br>
+  <label for="band">Band:</label>
+  <select id="band" name=album[band_id]>
+    <% Band.all.each do |band|  %>
+    <option value=" <%= band.id %>" <%= 'selected' if band.name == @band.name %> > <%= band.name %></option>
+    <% end %>
+
+
+  </select>
+
+  <br>
+  <input type="radio" name="album[album_type]" value="studio">Studio
+  <input type="radio" name="album[album_type]" value="live">Live
+
+  <br>
+  <input type="submit" value="Add Album">
+</form>
